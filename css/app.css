@@ -47,3 +47,11 @@ input, button, code, p {
   margin-top: -3rem;
   content: '';
 }
+
+.table tr > td{
+  text-align: right;
+}
+
+.table tr > td:nth-child(3){
+  text-align: left;
+}
