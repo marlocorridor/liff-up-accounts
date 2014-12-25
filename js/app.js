@@ -10,6 +10,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // setup variables
   // element variables
+  var rowTemplate = document.querySelector("#row-template");
+  var accountsTable = document.querySelector("#account_list");
+  var accountList = accountsTable.querySelector('tbody');
   // result variables
 
   // attach function calls on elements' event
