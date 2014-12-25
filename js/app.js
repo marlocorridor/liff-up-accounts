@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', function() {
   // We want to wait until the localisations library has loaded all the strings.
   // So we'll tell it to let us know once it's ready.
   navigator.mozL10n.once( localisations_load_callback );
+});
 
   // ---
   // define functions here
@@ -25,4 +26,3 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log('localisations loaded');
   }
 
-});
