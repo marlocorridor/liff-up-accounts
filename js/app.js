@@ -29,3 +29,56 @@ function localisations_load_callback () {
     console.log('localisations loaded');
 }
 
+function render_row ( accountObj ) {
+    var templateString,
+        renderedString;
+    
+    // get needs
+    templateString = rowTemplate.innerHTML;
+
+    // set defaults
+    accountObj = set_row_defaults( accountObj );
+
+    renderedString = replace_values( templateString, accountObj );
+    return renderedString;
+}
+
+function set_row_defaults ( accountObj ) {
+    // for (var i = accountObj.length - 1; i >= 0; i--) {
+        // accountObj['account'] = /[0-9\.\-]/.match( accountObj['account'] )
+        // accountObj['amount'] = /[0-9\.\-]/.match( accountObj['amount'] )
+        // accountObj['description'] = /[0-9\.\-]/.match( accountObj['description'] )
+        // accountObj['balance'] = /[0-9\.\-]/.match( accountObj['balance'] )
+    // };
+    return accountObj;
+}
+
+function replace_values ( templateString, listObj ) {
+    /***
+        this function renders the template string dynamically.
+        uses the passed data object's keys as target for replacement
+    */
+
+    // get keys to iterate on replacements
+    var listObjKeys = Object.keys( listObj );
+    var renderedString = templateString;
+
+    // iterate
+    for (var i = listObjKeys.length - 1; i >= 0; i--) {
+        // create regex obj
+        var dataIndexRegex = RegExp( "{{" + listObjKeys[i] + "}}" );
+        // get value to replace
+        var dataValue = listObj[ listObjKeys[i] ];
+
+        // execute replace
+        renderedString = renderedString.replace( dataIndexRegex, dataValue );
+    };
+    return renderedString;
+}
+
+function append_row ( accountObj ) {
+    // append row by manipulating innerHTML
+    // if it is better to use appendChild, replace this implementation
+    // replace implementation if the rows has events
+
+}
