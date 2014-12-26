@@ -87,6 +87,24 @@ function replace_values ( templateString, accountObj ) {
     return renderedString;
 }
 
+function clean_rendered_string ( renderedString, emptyMarkString ) {
+    // generate regex for cleaning unreplaced values
+    cleaningRegExp = 
+        RegExp(
+            liffUpConfig.template.open + 
+            liffUpConfig.template.clean + 
+            liffUpConfig.template.close,
+            'g'
+        );
+
+    emptyMarkString = emptyMarkString || '';
+
+    // execute replace
+    renderedString = renderedString.replace( cleaningRegExp, emptyMarkString )
+
+    return renderedString;
+}
+
 function append_row_element ( renderedString, accountList ) {
     // append row by manipulating innerHTML
     // if it is better to use appendChild, replace this implementation
