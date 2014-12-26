@@ -1,3 +1,10 @@
+var liffUpConfig = {
+    template:{
+        open : '{{',
+        close: '}}',
+        clean: '[^]+'
+    }
+};
 // DOMContentLoaded is fired once the document has been loaded and parsed,
 // but without waiting for other external resources to load (css/images/etc)
 // That makes the app more responsive and perceived as faster.
