@@ -87,9 +87,12 @@ function replace_values ( templateString, accountObj ) {
     return renderedString;
 }
 
-function append_row ( accountObj ) {
+function append_row_element ( renderedString, accountList ) {
     // append row by manipulating innerHTML
     // if it is better to use appendChild, replace this implementation
     // replace implementation if the rows has events
+    // accountList
+    accountList.innerHTML = accountList.innerHTML + renderedString;
 
+    return true;
 }
