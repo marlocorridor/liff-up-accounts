@@ -114,3 +114,28 @@ function append_row_element ( renderedString, accountList ) {
 
     return true;
 }
+
+function record_account ( accountForm, rowTemplate, accountList ) {
+    var renderedString,
+        appendStatus;
+
+    renderedString = 
+        render_row( 
+            formToObject( accountForm ),
+            rowTemplate
+        );
+
+    renderedString = 
+        clean_rendered_string( 
+            renderedString, 
+            '[no data]' 
+        );
+
+    appendStatus = append_row_element( renderedString, accountList );
+    
+    if ( appendStatus ) {
+        console.log('succesos!');
+    } else{
+        console.log('palyados!');
+    }
+}
