@@ -24,6 +24,10 @@ window.addEventListener('DOMContentLoaded', function() {
     // result variables
 
     // attach function calls on elements' event
+    accountForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        record_account( this, rowTemplate, accountList );
+    }, false);
 
     // We want to wait until the localisations library has loaded all the strings.
     // So we'll tell it to let us know once it's ready.
