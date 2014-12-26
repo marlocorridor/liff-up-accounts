@@ -68,15 +68,15 @@ function replace_values ( templateString, accountObj ) {
     */
 
     // get keys to iterate on replacements
-    var listObjKeys = Object.keys( listObj );
+    var accountObjKeys = Object.keys( accountObj );
     var renderedString = templateString;
 
     // iterate
-    for (var i = listObjKeys.length - 1; i >= 0; i--) {
+    for (var i = accountObjKeys.length - 1; i >= 0; i--) {
         // create regex obj
-        var dataIndexRegex = RegExp( "{{" + listObjKeys[i] + "}}" );
+        var dataIndexRegex = RegExp( "{{" + accountObjKeys[i] + "}}", 'g' );
         // get value to replace
-        var dataValue = listObj[ listObjKeys[i] ];
+        var dataValue = accountObj[ accountObjKeys[i] ];
 
         // execute replace
         renderedString = renderedString.replace( dataIndexRegex, dataValue );
