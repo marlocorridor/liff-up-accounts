@@ -37,7 +37,7 @@ function localisations_load_callback () {
     console.log('localisations loaded');
 }
 
-function render_row ( accountObj ) {
+function render_row ( accountObj, rowTemplate ) {
     var templateString,
         renderedString;
     
@@ -61,7 +61,7 @@ function set_row_defaults ( accountObj ) {
     return accountObj;
 }
 
-function replace_values ( templateString, listObj ) {
+function replace_values ( templateString, accountObj ) {
     /***
         this function renders the template string dynamically.
         uses the passed data object's keys as target for replacement
