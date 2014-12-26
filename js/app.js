@@ -42,7 +42,10 @@ function render_row ( accountObj, rowTemplate ) {
         renderedString;
     
     // get needs
-    templateString = rowTemplate.innerHTML;
+    templateString = 
+        // check if string of element object
+        rowTemplate.substring ?
+            rowTemplate : rowTemplate.innerHTML;
 
     // set defaults
     accountObj = set_row_defaults( accountObj );
