@@ -4,8 +4,8 @@ html, body {
 }
 
 body {
-  font-size: 1rem;
   background: #fff;
+  padding-top: 70px;
 }
 
 h1, h2 {
