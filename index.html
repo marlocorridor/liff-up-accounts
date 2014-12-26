@@ -49,6 +49,34 @@
                 </tbody>
             </table>
         </section>
+        <section>
+            <form id="account_form" class="form-inline">
+                <div class="form-group">
+                    <select style="background-color: transparent; border: 1px solid rgb(238, 238, 238); min-height: 2.4em; text-decoration: none;" id="account_id" name="account_id">
+                        <option value="LIV">LIV</option>
+                        <option value="CHR">CHR</option>
+                        <option value="TAX+">TAX+</option>
+                        <option value="BNS">BNS</option>
+                        <option value="UPG">UPG</option>
+                        <option value="EMG">EMG</option>
+                    </select>
+                    <!-- <input  id="account_id" name="account_id" type="text" class="form-control" placeholder="abbrv"> -->
+                </div>
+                <div class="form-group">
+                    <input  id="amount_val" name="amount_val" type="text" class="form-control" placeholder="abbrv">
+                </div>
+                <div class="form-group">
+                    <input  id="description_str" name="description_str" type="text" class="form-control" placeholder="abbrv">
+                </div>
+                <div class="form-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="fa fa-save"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </section>
     </body>
     <script id="row-template" type="text/template">
         <tr>
