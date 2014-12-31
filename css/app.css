@@ -51,4 +51,11 @@ form {
 table th{
   text-align: center;
 }
+
+#account_form select{
+  background-color: transparent;
+  border: 1px solid rgb(238, 238, 238);
+  min-height: 2.4em;
+  text-decoration: none;
+  padding-top: 5px;
 }
